@@ -1,0 +1,33 @@
+<div>POST to https://stellarburgers.nomoreparties.site/api/orders</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+    {
+    &quot;ingredients&quot;: [
+        &quot;9ca5a53cc190d5fd3b548a7f46332627&quot;,
+        &quot;4b6a563aefe6661ab68a91248cee0015&quot;,
+        &quot;0ce04099c03b1ce65bc072ab41df64b6&quot;
+    ]
+}
+    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://stellarburgers.nomoreparties.site/api/orders&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;ingredients&quot;: [
+        &quot;9ca5a53cc190d5fd3b548a7f46332627&quot;,
+        &quot;4b6a563aefe6661ab68a91248cee0015&quot;,
+        &quot;0ce04099c03b1ce65bc072ab41df64b6&quot;
+    ]
+}&#39;
+</div>
