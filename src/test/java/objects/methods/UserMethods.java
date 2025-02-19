@@ -48,12 +48,16 @@ public class UserMethods extends UserHTTP {
 
     @Step("Verifying user data")
     public void checkUserData(Response response, String expectedEmail, String expectedPassword, String expectedName) {
+        // Проверяем статус код ответа
+        new CheckMethods().checkStatusCode(response, SC_OK);
+
+        // Если статус код валидный, проверяем тело ответа
         UserRequest currentUser = response.body().as(UserResponse.class).getUser();
         Allure.addAttachment("New user", currentUser.toString());
-
         MatcherAssert.assertThat("The Email doesn't match", currentUser.getEmail(), equalTo(expectedEmail));
         MatcherAssert.assertThat("The name doesn't match", currentUser.getName(), equalTo(expectedName));
 
+        // Дополнительная проверка логина пользователя
         new CheckMethods().checkStatusCode(loginUser(expectedEmail, expectedPassword), SC_OK);
     }
 

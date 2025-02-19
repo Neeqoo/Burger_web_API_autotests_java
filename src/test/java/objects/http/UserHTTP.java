@@ -1,5 +1,6 @@
 package objects.http;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import objects.communication.UserRequest;
 import objects.resource.Api;
@@ -7,6 +8,7 @@ import objects.resource.Urls;
 
 public class UserHTTP extends BaseHTTP {
 
+    @Step("User registration")
     public Response registerUser(UserRequest user) {
         return postRequest(
                 Urls.SERVER_NAME + Api.REGISTER_USER,
@@ -14,12 +16,16 @@ public class UserHTTP extends BaseHTTP {
                 "application/json"
         );
     }
+
+    @Step("Deleting a user")
     public Response deleteUser(String token) {
         return deleteRequest(
                 Urls.SERVER_NAME + Api.USER,
                 token
         );
     }
+
+    @Step("User's login")
     public Response loginUser(UserRequest user) {
         return postRequest(
                 Urls.SERVER_NAME + Api.LOGIN_USER,
@@ -27,6 +33,8 @@ public class UserHTTP extends BaseHTTP {
                 "application/json"
         );
     }
+
+    @Step("Updating user data")
     public Response updateUser(UserRequest user, String token) {
         return patchRequest(
                 Urls.SERVER_NAME + Api.USER,
@@ -35,6 +43,8 @@ public class UserHTTP extends BaseHTTP {
                 token
         );
     }
+
+    @Step("Updating user data")
     public Response updateUser(UserRequest user) {
         return patchRequest(
                 Urls.SERVER_NAME + Api.USER,

@@ -1,12 +1,15 @@
 package objects.communication;
 
 
+import com.google.gson.annotations.SerializedName;
+
 public class IngredientsRequest {
 
-    private String _id;
+    @SerializedName("_id")
+    private String id;
 
-    public String get_id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
 
