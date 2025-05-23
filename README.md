@@ -1,11 +1,9 @@
-# Diplom_2
-
 Тестирование ручек API для Stellar [Burgers](https://stellarburgers.nomoreparties.site/).
 
 [Документация к API](https://code.s3.yandex.net/qa-automation-engineer/java/cheatsheets/paid-track/diplom/api-documentation.pdf)
 
 
-# Задание:
+# Задача:
 
 **Создание пользователя:**
 - создать уникального пользователя
